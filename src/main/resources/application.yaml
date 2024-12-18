@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: jenkins-demo
+
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/local-jenkins-demo-db
