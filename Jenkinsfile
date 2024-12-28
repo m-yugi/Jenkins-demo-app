@@ -35,7 +35,7 @@ pipeline{
                 echo "Pipeline succeeded!"
             }
             failure{
-                ehco "Pipeline failed!"
+                echo "Pipeline failed!"
             }
             always{
                 cleanWs();
