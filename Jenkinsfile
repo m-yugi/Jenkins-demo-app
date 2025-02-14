@@ -1,11 +1,5 @@
 pipeline{
     agent any
-    // agent{
-    //     docker {           
-    //         image 'maven:3-alpine' 
-    //         args '-v /root/.m2:/root/.m'
-    //         }
-    // }
     tools{
         maven 'maven plugin'
     }
@@ -24,9 +18,7 @@ pipeline{
         }
         stage("Build docker image"){
             steps{
-                script{
-                    docker.build("jenkins-demo-test")
-                }
+                sh "mvn spring-boot:build-image"
             }
         }
     }
