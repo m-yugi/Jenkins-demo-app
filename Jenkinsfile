@@ -3,7 +3,7 @@ pipeline{
     tools{
         maven 'maven-plugin'
         jdk 'java-21'
-        docker 'docker-plugin'
+        dockerTool 'docker-plugin'
     }
     stages{
         stage("clone stage"){
