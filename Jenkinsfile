@@ -3,7 +3,6 @@ pipeline{
     tools{
         maven 'maven-plugin'
         jdk 'java-21'
-        dockerTool 'docker-plugin'
     }
     stages{
         stage("clone stage"){
@@ -18,9 +17,9 @@ pipeline{
                 sh "mvn clean install package"
             }
         }
-        stage("Build docker image"){
+        stage("running the application"){
             steps{
-                sh "mvn spring-boot:build-image"
+                sh "mvn spring-boot:run"
             }
         }
     }
