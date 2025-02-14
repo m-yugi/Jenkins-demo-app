@@ -17,11 +17,6 @@ pipeline{
                 sh "mvn clean install package"
             }
         }
-        stage("running the application"){
-            steps{
-                sh "mvn spring-boot:run"
-            }
-        }
     }
         post{
             success{
