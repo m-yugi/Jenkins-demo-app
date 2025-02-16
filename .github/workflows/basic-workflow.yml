@@ -1,0 +1,34 @@
+name: learning to working with github workflows
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "person to great"
+        default: "world"
+        required: true
+        type: string
+      city:
+        description: "favorite city"
+        default: "world"
+        required: true
+        type: choice
+        options:
+          - "india"
+          - "USA"
+          - "europe"
+      fav-color-blue:
+        description: "is your favorite color blue"
+        required: true
+        type: boolean
+jobs:
+  greet:
+    name: "greeting the programmer"
+    runs-on:
+      -ubuntu-latest
+    steps:
+      - name: send greetings
+        run: |
+          echo "Hello ${{github.event.inputs.name}}"
+          echo "Your favorite city is ${{github.event.inputs.city}}"
+          echo "Is your favorite color blue : ${{github.event.inputs.fav-color-blue}}"
