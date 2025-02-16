@@ -25,7 +25,7 @@ jobs:
   greet:
     name: "greeting the programmer"
     runs-on:
-      -ubuntu-latest
+      - ubuntu-latest
     steps:
       - name: send greetings
         run: |
