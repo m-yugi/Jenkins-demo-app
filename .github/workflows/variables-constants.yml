@@ -61,6 +61,5 @@ jobs:
           echo $VAR2
           
           echo $VAR3
-          
-          env:
+        env:
             VAR3: mystepvar3
