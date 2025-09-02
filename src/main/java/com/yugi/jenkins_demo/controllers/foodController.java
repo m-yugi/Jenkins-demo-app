@@ -20,7 +20,7 @@ public class foodController {
 
     @PostMapping("/")
     public ResponseEntity<food> createFood(@RequestBody food Food) {
-        System.out.println(Food);
+        if (Food.getName() == null || Food.getName().isEmpty()) {}
         return ResponseEntity.ok(foodService.createFood(Food));
     }
 
