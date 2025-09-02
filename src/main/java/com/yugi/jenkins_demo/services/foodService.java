@@ -24,6 +24,7 @@ public class foodService {
     }
 
     public food getFoodById(String id) {
+        System.out.println(id);
         return foodRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(FOOD_NOT_FOUND_STRING + id));
     }
