@@ -30,6 +30,7 @@ public class foodController {
 
     @GetMapping("/{id}")
     public ResponseEntity<food> getFoodById(@PathVariable String id) {
+        System.out.println("hello");
         return ResponseEntity.ok(foodService.getFoodById(id));
     }
 
