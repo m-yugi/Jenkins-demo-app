@@ -15,8 +15,10 @@ public class foodService {
     private static final String FOOD_NOT_FOUND_STRING = "Food not found with id: ";
     private FoodDao foodRepository;
 
-    public food createFood(food food)
-    {
+
+
+    public food createFood(food food) {
+
         System.out.println(food);
         return foodRepository.save(food);
     }
@@ -26,6 +28,7 @@ public class foodService {
     }
 
     public food getFoodById(String id) {
+        System.out.println(id);
         return foodRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException(FOOD_NOT_FOUND_STRING + id));
     }
