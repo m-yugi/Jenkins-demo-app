@@ -16,6 +16,7 @@ public class foodService {
     private FoodDao foodRepository;
 
     public food createFood(food food) {
+        System.out.println(food);
         return foodRepository.save(food);
     }
 
