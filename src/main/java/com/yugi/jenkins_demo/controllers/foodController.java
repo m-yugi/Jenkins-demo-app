@@ -20,6 +20,7 @@ public class foodController {
 
     @PostMapping("/")
     public ResponseEntity<food> createFood(@RequestBody food Food) {
+        System.out.println(Food);
         return ResponseEntity.ok(foodService.createFood(Food));
     }
 
@@ -30,7 +31,6 @@ public class foodController {
 
     @GetMapping("/{id}")
     public ResponseEntity<food> getFoodById(@PathVariable String id) {
-        System.out.println("hello");
         return ResponseEntity.ok(foodService.getFoodById(id));
     }
 
