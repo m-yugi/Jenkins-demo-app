@@ -20,8 +20,11 @@ public class foodController {
 
     @PostMapping("/")
     public ResponseEntity<food> createFood(@RequestBody food Food) {
-        System.out.println(Food);
+
         System.out.println("FoodWorld");
+
+       
+
         return ResponseEntity.ok(foodService.createFood(Food));
     }
 
