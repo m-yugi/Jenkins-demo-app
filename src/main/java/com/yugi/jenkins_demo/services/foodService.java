@@ -1,6 +1,8 @@
 package com.yugi.jenkins_demo.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -11,7 +13,7 @@ import lombok.AllArgsConstructor;
 
 @Service
 @AllArgsConstructor
-public class foodService {
+public class foodService implements FoodServiceInterface{
     private static final String FOOD_NOT_FOUND_STRING = "Food not found with id: ";
     private FoodDao foodRepository;
 
@@ -21,7 +23,9 @@ public class foodService {
     }
 
     public List<food> getAllFood() {
-        return foodRepository.findAll();
+        List<food> foodItems = foodRepository.findAll();
+        return foodItems;
+//        return foodItems.stream().filter(foodItem -> LocalDateTime.now().isBefore(foodItem.getExpiryDate())).collect(Collectors.toUnmodifiableList());
     }
 
     public food getFoodById(String id) {
@@ -37,7 +41,6 @@ public class foodService {
         food.setName(foodDetails.getName());
         food.setDescription(foodDetails.getDescription());
         food.setPrice(foodDetails.getPrice());
-
         return foodRepository.save(food);
     }
 
